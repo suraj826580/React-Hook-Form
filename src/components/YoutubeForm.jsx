@@ -3,6 +3,7 @@ import { useForm } from "react-hook-form";
 import { DevTool } from "@hookform/devtools";
 
 export const YoutubeForm = () => {
+
   const form = useForm();
   const { register, control, handleSubmit, formState } = form;
   const { errors } = formState;
@@ -14,7 +15,10 @@ export const YoutubeForm = () => {
     <div>
       <h1>YouTube Form</h1>
 
-      <form onSubmit={handleSubmit(onSubmit)} noValidate>
+      <form
+        onSubmit={handleSubmit(onSubmit)}
+        defaultValue={defaultValue}
+        noValidate>
         <label htmlFor="username">Username</label>
         <input
           type="text"
@@ -53,3 +57,4 @@ export const YoutubeForm = () => {
     </div>
   );
 };
+// 
